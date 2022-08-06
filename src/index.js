@@ -3,14 +3,22 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 class Square extends React.Component {
   render() {
-    // Square recibe prop de Board
-    return <button className="square">{this.props.value}</button>;
+    return (
+      <button
+        className="square"
+        onClick={() => {
+          console.log("Click");
+        }} // funcion es pasada como prop de onClick
+      >
+        {this.props.value}
+      </button>
+    );
   }
 }
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square value={i} />; // pasa props a Square
+    return <Square value={i} />;
   }
 
   render() {
